@@ -2,7 +2,7 @@ name: Check Airdrop Every Hour at :46
 
 on:
   schedule:
-    - cron: '46 * * * *'
+    - cron: '58 * * * *'
   workflow_dispatch:
 
 jobs:
