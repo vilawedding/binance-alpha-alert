@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Fetch airdrop configs
-export async function fetchAirdropConfigs(account) {
+export async function fetchAirdropConfigs() {
   const data = JSON.stringify({ page: 1, rows: 6 });
   try {
     const response = await axios.post(

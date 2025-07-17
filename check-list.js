@@ -6,7 +6,7 @@ import { sendSlackMessage } from './slack.js';
 
   let configs;
   try {
-    configs = await fetchAirdropConfigs(account);
+    configs = await fetchAirdropConfigs();
   } catch (err) {
     const errorMsg = `
     ----------------------------------------------
