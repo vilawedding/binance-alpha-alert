@@ -1,0 +1,25 @@
+name: Check Airdrop Every Hour at :46
+
+on:
+  schedule:
+    - cron: '46 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-airdrop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - run: npm install
+
+      - name: Run Airdrop Checker
+        run: node check-list.js
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
