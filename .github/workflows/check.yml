@@ -1,4 +1,4 @@
-name: Check Airdrop Every Hour at :50
+name: Check Airdrop Every Hour at :5
 
 on:
   schedule:
