@@ -23,7 +23,7 @@ const account = accounts[0];
     return;
   }
 
-  const activeConfigs = configs.filter(cfg => cfg.status == 'ended');
+  const activeConfigs = configs.filter(cfg => cfg.status !== 'ended');
 
   if (activeConfigs.length === 0) {
     return;
