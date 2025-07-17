@@ -1,13 +1,8 @@
 import { fetchAirdropConfigs } from './api.js';
 import { sendSlackMessage } from './slack.js';
-import { readFile } from 'fs/promises';
-
-const jsonText = await readFile('./accounts.json', 'utf-8');
-const accounts = JSON.parse(jsonText);
-const account = accounts[0];
 
 (async () => {
-  console.log(`[CHECK] Checking airdrop list for ${account.name}...`);
+  console.log(`[CHECK] Checking airdrop list for`);
 
   let configs;
   try {
@@ -24,10 +19,10 @@ const account = accounts[0];
     return;
   }
 
-  console.log(`[${account.name}] Found ${configs.length} airdrop configs`);
+  console.log(`Found ${configs.length} airdrop configs`);
 
   if (!configs.length) {
-    const msg = `[${account.name}] ❌ No airdrop configs`;
+    const msg = `❌ No airdrop configs`;
     console.log(msg);
     await sendSlackMessage(msg);
     return;
